@@ -1,0 +1,72 @@
+.heading {
+    
+}
+.main-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(168, 167, 167);
+    padding: 5px 100px;
+}
+.left-heading{
+    display: flex;
+    align-items: center;
+}
+.left-heading img {
+    height: 45px;
+    margin-right: 10px;
+}
+
+
+.right-heading {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.download, .supplier {
+    font-weight: 600;
+    padding-right: 15px;
+    border-right: 2px solid gray;
+}
+
+.profile, .cart {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    font-weight: 600;
+}
+.cart, .cart-icon {
+    position: relative;
+}
+.cart-icon {
+    font-size: 20px;
+}
+.cart-count {
+    position: absolute;
+    font-size: 13px;
+    top: -5px;
+    right: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+}
+
+.sub-heading {
+    border-bottom: 1px solid rgb(168, 167, 167);
+}
+.sub-heading ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 85px;
+    font-weight: 450;
+}
