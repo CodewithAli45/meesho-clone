@@ -1,0 +1,14 @@
+.product-grid{
+    display: flex;
+    margin: 5px 0;
+    flex-wrap: wrap;
+    margin-right: 50px;
+    margin-left: 100px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.product {
+    width: 25%;
+    float: left;
+    margin-bottom: 30px;
+  }

@@ -4,7 +4,7 @@ import { Input } from 'antd';
 import { SearchOutlined, AndroidOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 import Myimg from '../../utils/meesho.png'
 
-export const Header = () => {
+export const Header = ({searchQuery, setSearchQuery}) => {
     const [isSticky, setIsSticky] = useState(false);
 
     useEffect(() => {
@@ -17,6 +17,10 @@ export const Header = () => {
         }
     }, []);
 
+    const handleInputSearch = (e) => {
+        setSearchQuery(e.target.value);
+    }
+
 
     return (
         <header className={`heading ${isSticky ? "sticky-heading" : ""}`}>
@@ -24,7 +28,8 @@ export const Header = () => {
                 <div className="left-heading">
                     <img src={Myimg} alt="meesho" />
                     <div className="search-box">
-                        <Input size='large' placeholder='Try Saree, Kurti or search by product code' prefix={<SearchOutlined />} />
+                        <Input size='large' type='text' value={searchQuery} onChange={handleInputSearch}
+                        placeholder='Try Saree, Kurti or search by product code' prefix={<SearchOutlined />} />
                     </div>
                 </div>
                 <div className="right-heading">
