@@ -7,7 +7,7 @@
     right: 0;
     z-index: 1000;
 }
-.main-heading {
+.main-headings {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,14 +37,14 @@
     border-right: 2px solid gray;
 }
 
-.profile, .cart {
+.profile, .header-cart {
     display: flex;
     flex-direction: column;
     gap: 2px;
     align-items: center;
     font-weight: 600;
 }
-.cart, .cart-icon {
+.header-cart, .cart-icon {
     position: relative;
 }
 .cart-icon {
@@ -61,7 +61,7 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: black;
+    background-color: palevioletred;
     color: white;
 }
 
@@ -75,4 +75,8 @@
     justify-content: space-around;
     padding: 0 85px;
     font-weight: 450;
+}
+.anchor-list {
+   text-decoration: none;
+   color: black;
 }

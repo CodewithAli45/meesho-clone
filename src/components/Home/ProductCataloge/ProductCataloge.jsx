@@ -11,7 +11,6 @@ export const ProductCataloge = ({searchQuery}) => {
         .then(response => response.json())
         .then(data => {
             setProducts(data);
-            console.log(data);
         });
     }, []);
 
@@ -21,7 +20,7 @@ export const ProductCataloge = ({searchQuery}) => {
         <div className='product-grid'>
             {
                 filteredproducts.map(product => (
-                    <Link key={product.id} to={`/products/${product.id}`}>
+                    <Link className='anchor-list' key={product.id} to={`/products/${product.id}`}>
                         <div className="product" key={product.id}><SingleProduct product={product} /> </div>
                     </Link>
                 ))

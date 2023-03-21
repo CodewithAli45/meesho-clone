@@ -1,9 +1,9 @@
 .product-grid{
     display: flex;
-    margin: 5px 0;
+    padding-top: 130px;
     flex-wrap: wrap;
     margin-right: 50px;
-    margin-left: 100px;
+    margin-left: 150px;
     justify-content: space-between;
     cursor: pointer;
 }

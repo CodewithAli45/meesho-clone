@@ -1,32 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../Header/Header.css';
 import { Input } from 'antd';
+import {Link} from 'react-router-dom'
 import { SearchOutlined, AndroidOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons'
 import Myimg from '../../utils/meesho.png'
 
-export const Header = ({searchQuery, setSearchQuery}) => {
-    const [isSticky, setIsSticky] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsSticky(window.pageYOffset > 0)
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        }
-    }, []);
+export const Header = ({searchQuery, setSearchQuery, count}) => {
 
     const handleInputSearch = (e) => {
         setSearchQuery(e.target.value);
     }
 
-
     return (
-        <header className={`heading ${isSticky ? "sticky-heading" : ""}`}>
-            <div className="main-heading">
+        <header className="sticky-heading">
+            <div className="main-headings">
                 <div className="left-heading">
-                    <img src={Myimg} alt="meesho" />
+                    <Link to="/" className='anchor-list'>
+                        <img src={Myimg} alt="meesho" />
+                    </Link>
                     <div className="search-box">
                         <Input size='large' type='text' value={searchQuery} onChange={handleInputSearch}
                         placeholder='Try Saree, Kurti or search by product code' prefix={<SearchOutlined />} />
@@ -40,14 +31,18 @@ export const Header = ({searchQuery, setSearchQuery}) => {
                     <div className='supplier'>Become a Supplier</div>
                     <div className='profile'>
                         <UserOutlined />
-                        <span>Profile</span>
+                        <Link to='/login'>
+                            <span>Profile</span>
+                        </Link>
                     </div>
-                    <div className='cart'>
+                    <div className='header-cart'>
                         <div className="cart-icon">
                             <ShoppingCartOutlined /> 
-                            <div className="cart-count">5</div>
+                            <div className="cart-count">{count}</div>
                         </div>
-                        <span>Cart</span>
+                        <Link to={`/cart`} className='anchor-list'>
+                            <span>Cart</span>
+                        </Link>
                     </div>
                 </div>
             </div>
