@@ -10,6 +10,7 @@ export const Home = () => {
         <div>
             <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             <ProductCataloge searchQuery={searchQuery} />
+        
         </div>
     );
 }

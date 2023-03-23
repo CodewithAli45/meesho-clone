@@ -1,24 +1,23 @@
 .cart {
-    margin-top: 200px;
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
+    /* border-bottom: 1px solid gray; */
 }
 .cart-details {
     display: flex;
-    min-height: 350px;
-    gap: 50px;
-    border: 1px solid salmon;
-    border-radius: 15px;
+    gap: 10px;
 }
 .cart-images {
     width: 80px;
     height: auto;
 }
 .cart-middle {
-    width: 450px;
+    margin-left: 20px;
+    width:750px;
 
 }
 .cart-product-names {
@@ -63,16 +62,18 @@
     justify-content: space-between;
     /* background-color: yellow; */
 }
-.subtotal-prices {
+.total-amount {
+    position: relative;
+    margin-left: 350px;
+    width: 750px;
+    background: #f3dede;
     text-align: right;
-    border-radius: 15px;
-    padding-right: 10px;
-    width: 100px;
-    /* background-color: red; */
+    padding: 10px;
     font-size: 20px;
 }
 .checkout {
-    margin-top: 100px;
+    margin-top: 10px;
+    margin-left: 650px;
     cursor: pointer;
 }
 
@@ -113,8 +114,6 @@
   }
   
   .modal button[type="submit"] {
-    display: block;
-    width: 100%;
     padding: 0.5rem;
     background-color: #007bff;
     color: white;
@@ -127,8 +126,17 @@
     background-color: #0069d9;
   }
   
-  /* Hide scrollbar on body when modal is open */
   body.modal-open {
     overflow: hidden;
   }
-  
+  .ordered {
+    margin-top: 100px;
+   
+  }
+  .ordered button {
+    margin-left: 120px;
+  }
+  .ordered button, Link{
+    text-decoration: none;
+    color: black;
+  }

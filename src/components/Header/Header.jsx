@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import '../Header/Header.css';
 import { Input } from 'antd';
 import {Link} from 'react-router-dom'
 import { SearchOutlined, AndroidOutlined, UserOutlined, ShoppingCartOutlined } from '@ant-design/icons'
-import Myimg from '../../utils/meesho.png'
+import Myimg from '../../utils/meesho.png';
+import { MyContextdetails } from '../Mycontext/Mycontext';
 
-export const Header = ({searchQuery, setSearchQuery, count}) => {
+export const Header = ({searchQuery, setSearchQuery}) => {
+
+    const GlobalState = useContext(MyContextdetails);
 
     const handleInputSearch = (e) => {
         setSearchQuery(e.target.value);
@@ -31,14 +34,14 @@ export const Header = ({searchQuery, setSearchQuery, count}) => {
                     <div className='supplier'>Become a Supplier</div>
                     <div className='profile'>
                         <UserOutlined />
-                        <Link to='/login'>
+                        <Link to='/login'className='anchor-list'>
                             <span>Profile</span>
                         </Link>
                     </div>
                     <div className='header-cart'>
                         <div className="cart-icon">
                             <ShoppingCartOutlined /> 
-                            <div className="cart-count">{count}</div>
+                            <div className="cart-count">{GlobalState.state.length}</div>
                         </div>
                         <Link to={`/cart`} className='anchor-list'>
                             <span>Cart</span>
