@@ -44,3 +44,6 @@ Question and Answers
 2.  What is memory leak?
 
     Ans-> Memory occurs when program fails to release memory that no longer needed, causing the progam to consume more and more memory overtime. This lead to performance issues and eventually crashed.
+
+
+    <img alt="Google Play store" loading="lazy" decoding="async" data-nimg="fill" src="https://images.meesho.com/images/pow/playstore-icon-big_400.webp" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">

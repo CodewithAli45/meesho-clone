@@ -6,6 +6,7 @@ import { ProductInfo } from './components/Home/ProductInfo/ProductInfo';
 import { Cart } from './components/Cart/Cart';
 
 
+
 export function App () {
 
   return (
