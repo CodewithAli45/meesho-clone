@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
 .cart {
-    margin-top: 120px;
+    margin-top: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,6 +77,11 @@
     margin-top: 10px;
     margin-left: 650px;
     cursor: pointer;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 10px 10px;
+    color: rgb(69, 231, 29);
+    background: #636663;
 }
 
 /* Modal styles */
@@ -130,7 +137,10 @@
     overflow: hidden;
   }
   .ordered {
-    margin-top: 100px;
+    position: absolute;
+    left: 20%;
+    font-family: 'Courgette', cursive;
+    font-size: 48px;
    
   }
   .ordered button {
@@ -138,5 +148,78 @@
   }
   .ordered button, Link{
     text-decoration: none;
-    color: black;
+    color: rgb(22, 104, 129);
+    font-family: 'Courgette', cursive;
   }
+
+  .fade-in {
+    animation: fadeInAnimation 5s ease-in-out; /* Change the duration and animation type as needed */
+  }
+  
+  /* Define the keyframes for the fadeInAnimation */
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px); /* Change the initial position as needed */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Change the final position as needed */
+    }
+  }
+
+@media (max-width: 768px) {
+    .cart{
+        margin-top: 150px;
+    }
+    .cart-images {
+        width: 60px;
+        height: auto;
+    }
+
+    .cart-middle {
+        width: 250px;
+    }
+    .cart-product-names {
+        font-size: 12px;
+    }
+    .cart-item-desc {
+        color: gray;
+        font-size: 10px;
+    }
+    .cart-prices {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+    .cart-btn {
+        width: 20px; height: 20px;
+        color: white;
+        border-radius: 50%;
+        background-color: rgb(119, 48, 212);
+        outline: none; border: none;
+    }
+    .checking-out {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .total-amount, .checkout{
+        width: 150px;
+        margin-left: 10px;
+    }
+    .total-amount{
+        background: #cdeed2;
+        color: rgb(145, 124, 124);
+        border: 1px solid gray;
+        border-radius: 15px;
+    }
+    .checkout{
+        background: #636663;
+        color: rgb(69, 231, 29);
+        border: 1px solid gray;
+        border-radius: 15px;
+        padding: 10px 10px;
+    }
+
+}

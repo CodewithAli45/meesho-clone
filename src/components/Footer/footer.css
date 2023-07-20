@@ -4,7 +4,8 @@
     gap: 10px;
     justify-content: center;
     color: rgb(113, 115, 117);
-    padding: 20px;
+    padding: 20px 40px;
+    /* margin-left: 30px; */
 }
 .footer-partOne{
     width: 90%;
@@ -49,4 +50,11 @@
 
 .footer-partTwo {
     gap: 5px;
+}
+
+@media (max-width: 768px) {
+    .container-footer {
+        flex-direction: column;
+      
+    }
 }

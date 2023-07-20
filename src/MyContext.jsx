@@ -1,12 +1,10 @@
 import React, { createContext, useReducer } from 'react';
 
-export const MyContextdetails = createContext();
+export const Mycontextdetails = createContext();
 
-export function Mycontext(props) {
-
-    const reducer = (state, action) => {
-        switch(action.type){
-            case 'ADD' :
+const reducer = (state, action) =>{
+    switch(action.type){
+        case 'ADD' :
                 const tempStateOne = state.filter((item) => 
                     action.payload.id === item.id);
                 if(tempStateOne.length > 0) {
@@ -36,23 +34,22 @@ export function Mycontext(props) {
             case 'REMOVE' :
                 const stateRemove = state.filter((item) => 
                 (item.id !== action.payload.id));
-
                 return stateRemove;
+            case 'RESET_CART':
+                return [];
 
             default :
                 return state;
-        }
     }
-
-    const [state, dispatch] = useReducer(reducer, []);
-    
-    const info = {state, dispatch};
-
-  return (
-    <div>
-        <MyContextdetails.Provider value={info}>
-            {props.children}
-        </MyContextdetails.Provider>    
-    </div>
-  )
 }
+export const MyContext = (props) => {
+    const [state, dispatch] = useReducer(reducer, []);
+    const info = {state, dispatch};
+    return (
+        <Mycontextdetails.Provider value={info}>
+            {props.children}
+        </Mycontextdetails.Provider>
+    );
+}
+
+

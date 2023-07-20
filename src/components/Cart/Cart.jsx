@@ -1,18 +1,15 @@
-import React, {useState, useContext} from 'react';
-import { MyContextdetails } from '../Mycontext/Mycontext';
+import React, { useContext, useState } from 'react';
+import { Mycontextdetails } from '../../MyContext';
 import { Header } from '../Header/Header';
 import './Cart.css';
-import { Link } from 'react-router-dom';
 
-
-
- export function Cart(props) {
+export const Cart = () => {
     const [showModal, setShowModal] = useState(false);
     const [address, setAddress] = useState("");
     const [paymentType, setPaymentType] = useState("");
     const [orderPlaced, setOrderPlaced] = useState(false);
 
-    const GlobalState = useContext(MyContextdetails);
+    const GlobalState = useContext(Mycontextdetails);
     const state = GlobalState.state;
 
     localStorage.setItem("usercart", JSON.stringify(state));
@@ -22,17 +19,16 @@ import { Link } from 'react-router-dom';
         return (total + item.price * item.quantity );
     }, 0);
 
-
+    const resetCart = () => {
+        dispatch({ type: "RESET_CART" });
+    };
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        setInterval(() => {
-          if (address === 'India') {
-            setShowModal(false);
-            setOrderPlaced(true);
-          }
-        }, 5000);
-      };
-
+        // console.log('clicked checkout');
+        e.preventDefault(e);
+        setShowModal(!showModal);
+        setOrderPlaced(true);
+        resetCart();
+    };
 
     return (
         <div>
@@ -72,20 +68,14 @@ import { Link } from 'react-router-dom';
                     )
                 })}
             </div>
-            <div className="total-amount">&#8377; {total}</div>
-            <button className='checkout' onClick={() => setShowModal(true)}>Checkout</button>
+            <div className="checking-out">
+                <div className="total-amount">&#8377; {total}</div>
+                <button className='checkout' onClick={() => setShowModal(true)}>Checkout</button>
+            </div>
+            
+
             {showModal && (
                 <div className="modal">
-                    {orderPlaced ? (
-                        <div className='ordered'>
-                            <h2>Your order has been booked.</h2>
-                            <button onClick={() => setOrderPlaced(false)}>
-                                <Link to='/'>
-                                    Home
-                                </Link>
-                            </button>
-                        </div>
-                    ) : (
                         <form onSubmit={handleSubmit}>
                             <label> Address:
                             <input
@@ -105,9 +95,18 @@ import { Link } from 'react-router-dom';
                             </label>
                             <button type="submit">Complete Payment</button>
                         </form>
-                    )}
+                    )
                 </div>
             )}
+            {
+                orderPlaced && (
+                    <div className={`ordered ${orderPlaced ? 'fade-in' : ''}`}>
+                        <h2>Your order has been booked.</h2>
+                        <h2 style={{textAlign:'center'}}>🎉 🎉 🎉</h2>
+                    </div>
+                ) 
+            }
         </div>
-    )
+    );
 }
+

@@ -1,14 +1,16 @@
 .product-grid{
     display: flex;
-    padding-top: 130px;
     flex-wrap: wrap;
     margin-right: 50px;
     margin-left: 150px;
     justify-content: space-between;
     cursor: pointer;
 }
-.product {
-    width: 25%;
-    float: left;
-    margin-bottom: 30px;
-  }
+
+@media (max-width: 768px) {
+    .product-grid {
+        margin-left: 5px;
+        margin-right: 5px;
+        
+    }
+}

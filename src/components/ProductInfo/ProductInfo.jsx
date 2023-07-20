@@ -1,11 +1,11 @@
 import React, {useState, useEffect, useContext} from 'react';
-import { Header } from '../../Header/Header';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { MyContextdetails } from '../../Mycontext/Mycontext';
+import { Mycontextdetails } from '../../MyContext';
 import { StarOutlined } from '@ant-design/icons';
 import { CiDiscount1 } from 'react-icons/ci'
 import './ProductInfo.css';
+import { Header } from '../Header/Header';
 
 
 
@@ -14,7 +14,7 @@ export function ProductInfo() {
     const [product, setProduct] = useState({});
     const [cartText, setCartText] = useState('Add to Cart');
 
-    const GlobalState = useContext(MyContextdetails);
+    const GlobalState = useContext(Mycontextdetails);
     const dispatch = GlobalState.dispatch;
     
     var qty = 'quantity';
@@ -37,7 +37,7 @@ export function ProductInfo() {
     }, [id]);
 
   return (
-    <>
+    <>  
         <Header />
         <div className='product-details2'>
             <div className="left-side">
@@ -45,9 +45,7 @@ export function ProductInfo() {
             </div>
             <div className="middle">
                 <img className='images-large' src={product.image} alt={product.title} />
-
-                    <button className='product-btn' onClick={handleCart}>{cartText}</button>
-
+                <button className='product-btn' onClick={handleCart}>{cartText}</button>
             </div>
             <div className="right-side">
                 <div className="right-side-up">

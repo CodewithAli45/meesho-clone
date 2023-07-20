@@ -1,4 +1,3 @@
-
 .sticky-heading {
     position: fixed;
     background-color: white;
@@ -6,6 +5,7 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    font-family: 'Work Sans', sans-serif;
 }
 .main-headings {
     display: flex;
@@ -13,17 +13,20 @@
     justify-content: space-between;
     margin: 0 auto;
     border-bottom: 1px solid rgb(168, 167, 167);
-    padding: 5px 100px;
+    padding: 5px 50px;
 }
 .left-heading{
     display: flex;
     align-items: center;
 }
 .left-heading img {
-    height: 45px;
+    max-height: 55px;
     margin-right: 10px;
+    cursor: pointer;
 }
-
+.left-heading .search-box {
+    width: 350px;
+}
 
 .right-heading {
     display: flex;
@@ -32,23 +35,30 @@
 }
 
 .download, .supplier {
-    font-weight: 600;
     padding-right: 15px;
     border-right: 2px solid gray;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: black;
 }
 
 .profile, .header-cart {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 2px;
     align-items: center;
     font-weight: 600;
+    cursor: pointer;
 }
 .header-cart, .cart-icon {
     position: relative;
 }
 .cart-icon {
     font-size: 20px;
+    cursor: pointer;
 }
 .cart-count {
     position: absolute;
@@ -63,10 +73,12 @@
     border-radius: 50%;
     background-color: palevioletred;
     color: white;
+    cursor: pointer;
 }
 
 .sub-heading {
     border-bottom: 1px solid rgb(168, 167, 167);
+    position: relative;
 }
 .sub-heading ul {
     display: flex;
@@ -75,8 +87,127 @@
     justify-content: space-around;
     padding: 0 85px;
     font-weight: 450;
+    cursor: pointer;
+    position: relative;
+    height: 20px;
+    /* background-color: red; */
 }
-.anchor-list {
-   text-decoration: none;
-   color: black;
+
+
+.sub-heading .categories li {
+    height: 20px;
+}
+
+.sub-heading .sub-categories {
+  display: none;
+  background-color: #f7cfcf;
+}
+ .categories li:hover .sub-categories {
+  
+  padding: 5px 0;
+  display: flex;  
+  z-index: 999;
+}
+
+.sub-heading .sub-categories li {
+  list-style: none;
+}
+.responsive {
+    display: none;
+}
+.main-headings-responsive {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .main-headings {
+        display: none;
+    }
+    .main-headings-responsive{
+        display: block;
+    }
+    .left-heading-responsive {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 5px;
+    }
+    .part-one {
+        display: flex;
+        gap: 15px;
+    }
+    .part-two {
+        display: flex;
+        gap: 40px;
+    }
+    .responsive {
+        display: block;
+        border: 1px solid pink;
+        padding: 5px;
+        background-color: transparent;
+        border-radius: 5px;
+        outline: none;
+        width: 42px;
+    }
+    img {
+        width: 90px;
+    }
+    .sub-heading{
+        display: none;
+    }
+    .search-box-responsive{
+        display: flex;
+        justify-content: center;
+        margin: 15px 20px;
+    }
+    .search-box-responsive input{
+        width: 100%;
+        padding: 10px 15px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        background-color: rgb(223, 218, 218);
+        color: blue;
+    }
+    
+    .sub-heading-responsive ul {
+        list-style: none;
+        color: aqua;
+        margin-left: 10px;
+        background-color: rgb(43, 33, 33);
+        display: flex;
+        border-radius: 20px;
+        box-shadow: px 0px 5px 5px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        gap: 15px;
+        width: 200px;
+        height: 400px;
+        padding: 5px 10px;
+    }
+    
+    .sub-heading-responsive .categories li {
+        height: 20px;
+    }
+
+    .sub-heading-responsive .sub-categories {
+        display: none;
+        height: 20px;
+        background-color: #f7cfcf;
+    }
+    .sub-heading-responsive .categories li .sub-categories {
+        display: block;
+        padding: 5px 0;
+        display: flex;  
+        z-index: 999;
+    }
+
+    .sub-heading-responsive .sub-categories li {
+    list-style: none;
+    }
+    .profile{
+        display: flex;
+        flex-direction: column;
+    }
+   
+     
 }
