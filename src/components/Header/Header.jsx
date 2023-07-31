@@ -7,51 +7,7 @@ import { SearchOutlined, AndroidOutlined, UserOutlined, ShoppingCartOutlined,Men
 
 
 export const Header = ({searchQuery, setSearchQuery, profile}) => {
-    const [iscategory, setIscategory] = useState(false);
 
-  const categories = [
-    {
-      title: 'Women Enthnics',
-      subCategories: ['Sarees', 'Kurtis', 'Salwar Suits', 'Lehengas'],
-    },
-    {
-      title: 'Women Western',
-      subCategories: ['Dresses', 'Tops', 'Jeans', 'Jackets', 'Plazzo', 'Shorts', 'Bra', 'Nightsuits'],
-    },
-    {
-        title: 'Mens',
-        subCategories: ['Dresses', 'Shirts', 'Jeans', 'Trousers', 'Jackets', 'Shoes', 'Accessories'],
-    },
-    {
-        title: 'Kids',
-        subCategories: ['Dresses', 'Rompers', 'Toys', 'Stationary', 'Baby Care'],
-      },
-      {
-        title: 'Home & Kitchen',
-        subCategories: ['Bedsheets', 'Doormats', 'Curtains', 'Clocks', 'Kitchen Storage'],
-      },
-      {
-        title: 'Beauty & Health',
-        subCategories: ['Makeup', 'Sanitizers', 'Oral Care', 'Deodrants'],
-      },
-      {
-        title: 'Jwellery & Accessories',
-        subCategories: ['Earnings', 'Mangalsutras', 'Studs', 'Bangles', 'Necklace'],
-      },
-      {
-        title: 'Boys & Footware',
-        subCategories: ['Handbag', 'Clutches', 'Wallet'],
-      },
-      {
-        title: 'Electronics',
-        subCategories: ['Mobile', 'Smartwatches', 'Mobile Holder', 'Cases & Covers', 'Home Appliance'],
-      },
-  ];
-
-  const handleCategory = (category) => {
-    setIscategory(!iscategory);
-    console.log(category);
-  };
     const GlobalState = useContext(Mycontextdetails);
 
     const handleInputSearch = (e) => {
@@ -129,48 +85,29 @@ export const Header = ({searchQuery, setSearchQuery, profile}) => {
             </div>
             <div className="sub-heading">
                 <ul className="categories">
-                {categories.map((category) => (
-                    <li
-                    key={category.title}
-                    onClick={() => handleCategory(category)}
-                    >
-                    {category.title}
-                        { iscategory && (
-                                (category.subCategories.map((subCategory, index) => (
-                                    <div className="sub-categories">
-                                        <ul key={index}>
-                                        <li >{subCategory}</li>
-                                    </ul>
-                                    </div>
-                                    
-                                )))
-                            )}
-                    
-                    </li>
-                ))}
+                    <Link to={'/category/womenethnics'} className='anchor-list'><li>Women Ethnics</li></Link>
+                    <Link to={'/category/womenewestern'}className='anchor-list'><li>Women Western</li></Link>
+                    <Link to={'/category/men'}className='anchor-list'><li>Men</li></Link>
+                    <Link to={'/category/kids'}className='anchor-list'><li>Kids</li></Link>
+                    <Link to={'/category/homekitchen'}className='anchor-list'><li>Home & Kitchen</li></Link>
+                    <Link to={'/category/beautyhealth'}className='anchor-list'><li>Beauty & Health</li></Link>
+                    <Link to={'/category/accessories'}className='anchor-list'><li>Jewellery & Accessories</li></Link>
+                    <Link to={'/category/bags&footware'}className='anchor-list'><li>Bags & Footware</li></Link>
+                    <Link to={'/category/electronics'}className='anchor-list'><li>Electronics</li></Link>
                 </ul>
             </div>
             {
                 responsive && <div className="sub-heading-responsive">
                 <ul >
-                    {categories.map((category) => (
-                        <li
-                        key={category.title}
-                        onClick={() => handleCategory(category)}
-                        >
-                        {category.title}
-                        { iscategory && (
-                                (category.subCategories.map((subCategory, index) => (
-                                    <div className="sub-categories">
-                                        <ul key={index}>
-                                        <li >{subCategory}</li>
-                                    </ul>
-                                    </div>
-                                    
-                                )))
-                            )}
-                        </li>
-                    ))}
+                    <Link to={'/category/womenethnics'}className='anchor-list'><li>Women Ethnics</li></Link>
+                    <Link to={'/category/womenewestern'}className='anchor-list'><li>Women Western</li></Link>
+                    <Link to={'/category/men'}className='anchor-list'><li>Men</li></Link>
+                    <Link to={'/category/kids'}className='anchor-list'><li>Kids</li></Link>
+                    <Link to={'/category/homekitchen'}className='anchor-list'><li>Home & Kitchen</li></Link>
+                    <Link to={'/category/beautyhealth'}className='anchor-list'><li>Beauty & Health</li></Link>
+                    <Link to={'/category/accessories'}className='anchor-list'><li>Jewellery & Accessories</li></Link>
+                    <Link to={'/category/bags&footware'}className='anchor-list'><li>Bags & Footware</li></Link>
+                    <Link to={'/category/electronics'}className='anchor-list'><li>Electronics</li></Link>
                 </ul>
             </div>
             }

@@ -1,5 +1,7 @@
 import React from 'react';
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Box, Text, Stack, Checkbox, } from '@chakra-ui/react'
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Box, Text, Stack, Checkbox, } from '@chakra-ui/react';
+
+import './Sidebar.css'
 
 const Sidebar = ({ categoryFilter, onPriceFilterChange }) => {
     const [priceFilter, setPriceFilter] = React.useState([]); 
@@ -42,7 +44,7 @@ const Sidebar = ({ categoryFilter, onPriceFilterChange }) => {
 
                             <Stack spacing={5} direction='column'>
                                 <Checkbox value={199}
-                                    onChange={handlePriceFilterChange} borderRadius={"15px"} mt="5px" padding="10px" fontSize={"17px"} border={"1px solid rgb(240,240,240)"} colorScheme='green'  >
+                                    onChange={handlePriceFilterChange} borderRadius={"15px"} mt="5px" padding="10px" fontSize={"17px"} border={"1px solid rgba(0,0,0,0.3)"} colorScheme='green'  >
                                     Under ₹ 199
                                 </Checkbox>
                                 <Checkbox value={299}

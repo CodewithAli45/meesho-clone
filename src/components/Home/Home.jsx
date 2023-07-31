@@ -21,7 +21,7 @@ export const Home = ({profile}) => {
         setProducts(data);
         // console.log('products , ', data);
     }
-
+ 
     useEffect(() => {
         fetchProduct();
     }, []);
@@ -54,7 +54,9 @@ export const Home = ({profile}) => {
             <div className="homepage-display">
                 <h2 className='home-text'>Products for you</h2>
                 <div className="bottomside-bar">
-                    <Sidebar onPriceFilterChange={handlePriceFilterChange} categoryFilter={categoryFilterFunc} />
+                    <div className="sidebar">
+                        <Sidebar  onPriceFilterChange={handlePriceFilterChange} categoryFilter={categoryFilterFunc} />
+                    </div>
                     <Products filteredproducts={filteredData} filterdatabycategory={filterdatabycategory} /> 
                 </div>
                 

@@ -21,7 +21,7 @@ export const Products = ({ filteredproducts, filterdatabycategory}) => {
                 ))
                 )
             }
-            
+             
         </div>
     );
 }

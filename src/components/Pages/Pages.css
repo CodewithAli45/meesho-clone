@@ -1,0 +1,12 @@
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 130px;
+    flex-wrap: wrap;
+}
+.cat-heading {
+    color: black;
+    background-color: yellow;
+}
